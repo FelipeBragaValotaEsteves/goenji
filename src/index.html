@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INAZUMA</title>
+    <link rel="shortcut icon" href="../assets/soccer-ball.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+    <script defer>
+        function fecharAlerta() {
+            const alerta = document.getElementById('alerta');
+            alerta.classList.remove('show');
+        }
+
+        function fecharModal() {
+            const modalElement = document.getElementById('modal-estatisticas')
+            modalElement.style.display = 'none'
+        }
+    </script>
+</head>
+
+<body>
+    <div id="alerta" class="alerta">
+        <span id="alerta-msg"></span>
+        <button id="close-btn" onclick="fecharAlerta()">×</button>
+    </div>
+    <nav class="nav-index">
+        <div>
+            <img class="img-logo" src="../assets/INAZUMA.svg" alt="log-inazuma">
+        </div>
+        <ul>
+            <li><a href="" class="nav-link">HOME</a></li>
+            <li><a href="#times" class="nav-link">TIMES</a></li>
+            <li><a href="#jogadores" class="nav-link">JOGADORES</a></li>
+        </ul>
+    </nav>
+
+    <div id="app">
+    </div>
+    <div class="modal fade" id="modal-estatisticas" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="meuModalLabel">Estatísticas</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="form-estatisticas">
+                        <div class="mb-3">
+                            <label for="gols" class="form-label">Gols</label>
+                            <input type="number" class="form-control" id="gols" name="gols" min="0" maxlength="8">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="assistencias" class="form-label">Assistências</label>
+                            <input type="number" class="form-control" id="assistencias" name="assistencias" min="0"
+                                maxlength="8">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cartoes_amarelos" class="form-label">Cartões Amarelos</label>
+                            <input type="number" class="form-control" id="cartoes_amarelos" name="cartoes_amarelos"
+                                min="0" maxlength="8">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cartoes_vermelhos" class="form-label">Cartões Vermelhos</label>
+                            <input type="number" class="form-control" id="cartoes_vermelhos" name="cartoes_vermelhos"
+                                min="0" maxlength="8">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="button-control" style="gap: 10px;">
+                        <button type="button" class="btn btn-secondary" onclick="fecharModal()">FECHAR</button>
+                        <button type="submit" class="btn btn-primary" id="btn_save">SALVAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script defer type="module" src="./js/app.js"></script>
+</body>
+
+</html>
